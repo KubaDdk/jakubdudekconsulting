@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jakub Dudek Consulting – Web &amp; app development, test automation</title>
+<meta name="description" content="Jakub Dudek Consulting builds and tests web and mobile applications. 6 years of experience in software development and test automation. Based in Antwerp, Belgium.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231B2430'/><text x='50' y='66' font-family='Arial' font-weight='700' font-size='46' fill='%23F3F4F1' text-anchor='middle'>JD</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F4F1;
+    --surface: #FFFFFF;
+    --ink: #1B2430;
+    --muted: #5A6470;
+    --line: #D9DCD6;
+    --signal: #2346C8;
+    --photo-bg: #FFFFFF;
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #161B22;
+      --surface: #1E242D;
+      --ink: #ECEEEA;
+      --muted: #A3ABB5;
+      --line: #313844;
+      --signal: #8EA6FF;
+      color-scheme: dark;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--signal); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+
+  /* Header */
+  .site-header { padding: 1.5rem 0; }
+  .site-header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .brand { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; }
+  .nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+  .nav a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { padding: 3rem 0 4.5rem; }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 6.5vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.5rem;
+  }
+  .hero .lede { font-size: 1.25rem; line-height: 1.5; max-width: 32ch; margin: 0 0 2rem; color: var(--ink); }
+  .hero .facts { display: flex; gap: 2.5rem; flex-wrap: wrap; margin: 0 0 2.25rem; padding: 0; list-style: none; }
+  .hero .facts li { display: flex; flex-direction: column; }
+  .hero .facts strong { font-family: var(--display); font-size: 1.6rem; font-weight: 700; line-height: 1.1; }
+  .hero .facts span { color: var(--muted); font-size: 0.95rem; }
+  .button {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.85rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .button:hover { background: var(--signal); color: #fff; }
+  .portrait {
+    background: var(--photo-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Sections */
+  section { padding: 4.5rem 0; border-top: 1px solid var(--line); }
+  .section-head { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  h3 { font-family: var(--display); font-weight: 700; font-size: 1.3rem; line-height: 1.25; margin: 0 0 0.5rem; }
+  p { margin: 0 0 1rem; max-width: 66ch; }
+  .muted { color: var(--muted); }
+
+  /* Services */
+  .services { display: grid; gap: 2.5rem; }
+  .service { display: grid; grid-template-columns: 2.25rem 1fr; gap: 1rem; }
+  .service svg { width: 2.25rem; height: 2.25rem; stroke: var(--signal); }
+  .service p { margin: 0; }
+
+  /* Experience */
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .job { padding: 0 0 2.5rem 1.75rem; border-left: 2px solid var(--line); position: relative; }
+  .job:last-child { padding-bottom: 0; }
+  .job::before {
+    content: "";
+    position: absolute; left: -7px; top: 0.45rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--signal);
+  }
+  .job:first-child::before { background: var(--signal); }
+  .job .when { color: var(--muted); font-size: 0.95rem; margin: 0 0 0.35rem; }
+  .job ul { margin: 0.75rem 0 0; padding-left: 1.1rem; }
+  .job li { margin-bottom: 0.4rem; max-width: 64ch; }
+  .job li b { font-weight: 600; }
+
+  /* Skills & education */
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 2rem; padding: 0; list-style: none; }
+  .tags li { border: 1px solid var(--line); background: var(--surface); padding: 0.35rem 0.8rem; border-radius: 999px; font-size: 0.95rem; }
+  .edu { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; }
+  .edu h3 { font-size: 1.1rem; margin-bottom: 0.15rem; }
+  .edu p { margin: 0; }
+
+  /* Contact */
+  .contact h2 { font-size: clamp(2rem, 5vw, 3.4rem); max-width: 16ch; }
+  .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; font-size: 1.15rem; }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--muted); font-size: 0.9rem; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  footer p { margin: 0; }
+
+  @media (max-width: 820px) {
+    .hero { padding-top: 1.5rem; }
+    .hero .wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .portrait { max-width: 360px; order: -1; }
+    .section-head { grid-template-columns: 1fr; gap: 1.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#">Jakub Dudek Consulting</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Web and app development, built to be tested.</h1>
+        <p class="lede">I’m Jakub Dudek. I build web and mobile applications and the automated tests that keep them working.</p>
+        <ul class="facts">
+          <li><strong>6 years</strong><span>in software development and QA</span></li>
+          <li><strong>Antwerp</strong><span>working across Belgium</span></li>
+        </ul>
+        <a class="button" href="#contact">Get in touch</a>
+      </div>
+      <div class="portrait">
+        <img src="images/jakub-dudek.jpg" alt="Portrait of Jakub Dudek" width="675" height="681">
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap section-head">
+      <h2>What I do</h2>
+      <div class="services">
+        <div class="service">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="15" rx="2"/><path d="M2.5 8.5h19M9 13l-2 2 2 2M15 13l2 2-2 2"/></svg>
+          <div>
+            <h3>Web development</h3>
+            <p>Websites and web applications built with TypeScript and React, from a simple company site to a full front end talking to your APIs.</p>
+          </div>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+          <div>
+            <h3>App development</h3>
+            <p>Mobile apps for iPhone and Android built with React Native, taken from first prototype through to release on the App Store and Google Play.</p>
+          </div>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9.5A1.7 1.7 0 0 0 6.5 21h11a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7.5 15h9"/></svg>
+          <div>
+            <h3>Test automation and QA</h3>
+            <p>End-to-end, API and contract tests with Cypress, Selenium, RestAssured and Pact, wired into your CI/CD pipeline on GitHub Actions or Azure DevOps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap section-head">
+      <h2>About me</h2>
+      <div>
+        <p>I’m a test automation engineer and developer with a deep interest in quality and how software is built. Making sure an application works reliably is what drives me, so I keep exploring new testing methods and automation tools.</p>
+        <p>Today I also build websites and mobile apps. I bring the same focus on quality to every project, so what I deliver is tested from the start and keeps working after launch.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="contact" class="contact">
+    <div class="wrap section-head">
+      <h2>Have a project in mind?</h2>
+      <ul class="contact-list">
+        <li><a href="mailto:jakubdudekconsulting@outlook.com">jakubdudekconsulting@outlook.com</a></li>
+        <li><a href="https://www.linkedin.com/in/jakubdudekk/" rel="noopener">LinkedIn</a></li>
+        <li class="muted">Antwerp, Belgium</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Jakub Dudek Consulting</p>
+    <div>
+      <p>Lange Lozanastraat 233, 2018 Antwerpen</p>
+      <p>BE 1030.788.019</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
